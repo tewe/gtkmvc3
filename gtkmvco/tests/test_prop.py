@@ -5,6 +5,8 @@ Test should print:
 foo
 """
 
+import _importer
+from gtkmvc3.support.porting import add_metaclass
 
 class Meta (type):
 
@@ -23,8 +25,8 @@ class Meta (type):
   pass
 
 
+@add_metaclass(Meta)
 class AA (object):
-  __metaclass__ = Meta
 
   pass
 
