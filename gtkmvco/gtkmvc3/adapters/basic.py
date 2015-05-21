@@ -61,7 +61,7 @@ class Intermediate(Observer):
                 getattr(self.model, self.prop_name), self.path, self.adapter)
 
     def delete_next(self):
-        if self.__next__:
+        if self.next:
             self.next.delete()
             self.next = None
 
