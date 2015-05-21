@@ -67,8 +67,6 @@ class View (object):
         self.autoWidgets = {}
         self.__autoWidgets_calculated = False
 
-        self.glade_xmlWidgets = []
-
         _top = top if top else self.top
         wids = ((_top,) if _top is None or isinstance(_top, str)
                 else _top)  # Already a list or tuple

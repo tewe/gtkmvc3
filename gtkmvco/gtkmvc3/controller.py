@@ -453,10 +453,6 @@ class Controller (Observer):
             assert(name not in dic) # not already connected!
             dic[name] = method
 
-        # autoconnects glade in the view (if available any)
-        for xml in self.view.glade_xmlWidgets:
-            xml.signal_autoconnect(dic)
-
         # autoconnects builder if available
         if self.view._builder is not None:
             self.view._builder_connect_signals(dic)
