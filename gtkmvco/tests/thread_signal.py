@@ -66,7 +66,7 @@ class MyObserver (Observer):
 
     # notification
     def property_sgn_signal_emit(self, model, args):
-        print "Signal!", model, args
+        print("Signal!", model, args)
         return
 
     pass # end of class

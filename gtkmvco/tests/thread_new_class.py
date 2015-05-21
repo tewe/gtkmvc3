@@ -86,7 +86,7 @@ class MyObserver (Observer):
 
     # notification
     def property_obj_value_change(self, model, old, new):
-        print "obj changed!"
+        print("obj changed!")
         return
 
     # we are interested in knowing the object changed only after it
@@ -94,7 +94,7 @@ class MyObserver (Observer):
     # will not be called.
     def property_obj_after_change(self, model, instance, name, res,
                                   args, kwargs):
-        print "obj after change!", instance, name, res, args, kwargs
+        print("obj after change!", instance, name, res, args, kwargs)
         return
 
     pass

@@ -39,15 +39,15 @@ class MyModelDer2 (MyModelDer1):
 
 class MyObserver (gtkmvc3.Observer):
     def property_name_value_change(self, model, old, new):
-        print "name changed from %s to %s" % (old, new)
+        print("name changed from %s to %s" % (old, new))
         return
 
     def property_age_value_change(self, model, old, new):
-        print "age changed from %d to %d" % (old, new)
+        print("age changed from %d to %d" % (old, new))
         return
 
     def property_days_value_change(self, model, old, new):
-        print "days changed from %d to %d" % (old, new)
+        print("days changed from %d to %d" % (old, new))
         return
 
     pass # end of class

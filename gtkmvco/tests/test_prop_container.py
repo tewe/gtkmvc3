@@ -25,8 +25,8 @@ class MyObserver (Observer):
       
   def property_mylist_before_change(self, model, prop_instance, 
                                     meth_name, args, kwargs):
-    print "property_mylist_before_change:"
-    print model, prop_instance, meth_name, args, kwargs
+    print("property_mylist_before_change:")
+    print(model, prop_instance, meth_name, args, kwargs)
     return
 
   pass # end of class

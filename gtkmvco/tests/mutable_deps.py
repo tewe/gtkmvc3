@@ -22,7 +22,7 @@ class Display(Observer):
     # Adding after=True makes no difference.
     @Observer.observe('sum', assign=True)
     def notify(self, model, name, info):
-        print info.new
+        print(info.new)
 
 m = Adder()
 o = Display(m)

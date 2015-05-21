@@ -22,7 +22,7 @@ class MyObserver (Observer):
         return
 
     def property_test_value_change(self, model, old, new):
-        print "Changed ", model, old, new
+        print("Changed ", model, old, new)
         return
     pass
 

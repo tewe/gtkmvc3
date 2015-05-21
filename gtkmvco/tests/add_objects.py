@@ -13,4 +13,4 @@ assert b.get_objects()
 
 # We could show the window now, but the spinner wouldn't work
 
-print "If you can read this, GtkBuilder has terrible error handling"
+print("If you can read this, GtkBuilder has terrible error handling")

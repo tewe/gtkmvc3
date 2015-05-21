@@ -12,9 +12,9 @@ class Meta (type):
 
     
     clsi = type.__new__(cls, name, bases, cls_dict)
-    print clsi
+    print(clsi)
 
-    def foo(self): print "foo"
+    def foo(self): print("foo")
     setattr(clsi, "foo", foo)
     
     return clsi
@@ -28,6 +28,6 @@ class AA (object):
 
   pass
 
-print AA.foo
+print(AA.foo)
 a = AA()
 a.foo()
