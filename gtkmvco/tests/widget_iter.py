@@ -20,12 +20,9 @@ class Ctrl(gtkmvc3.Controller):
         self.set1 = set()
         self.set2 = set()
         for item1 in iter1:
-            item2 = iter2.next()
+            item2 = next(iter2)
             self.set1.add(item1)
             self.set2.add(item2)
-
-    def on_button7_clicked(self, button):
-        pass
 
 class TwoForOne(unittest.TestCase):
     def setUp(self):
