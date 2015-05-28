@@ -479,7 +479,7 @@ class Controller (Observer):
                                     lambda d: d.year,
                                     lambda d,y: d.replace(year=y),
                                     spurious=self.accepts_spurious_change())
-            ad.connect_widget(wid, lambda c: c.get_date()[0],
+            ad.connect_widget(wid, lambda c: int(c.get_date()[0]),
                               lambda c,y: c.select_month(c.get_date()[1], y),
                               "day-selected", flavour=flavour)
             res.append(ad) # year
@@ -488,8 +488,8 @@ class Controller (Observer):
                                     lambda d: d.month,
                                     lambda d,m: d.replace(month=m),
                                     spurious=self.accepts_spurious_change())
-            ad.connect_widget(wid, lambda c: c.get_date()[1]+1,
-                              lambda c,m: c.select_month(m-1, c.get_date()[0]),
+            ad.connect_widget(wid, lambda c: int(c.get_date()[1])+1,
+                              lambda c,m: c.select_month(m-1, int(c.get_date()[0])),
                               "day-selected", flavour=flavour)
             res.append(ad) # month
 
@@ -497,7 +497,7 @@ class Controller (Observer):
                                     lambda d: d.day,
                                     lambda d,v: d.replace(day=v),
                                     spurious=self.accepts_spurious_change())
-            ad.connect_widget(wid, lambda c: c.get_date()[2],
+            ad.connect_widget(wid, lambda c: int(c.get_date()[2]),
                               lambda c,d: c.select_day(d),
                               "day-selected", flavour=flavour)
             res.append(ad) # day
