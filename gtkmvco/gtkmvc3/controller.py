@@ -52,7 +52,7 @@ def setup_column(widget, column=0, attribute=None, renderer=None,
         if attribute is None:
             raise TypeError("Column not named")
     if not renderer:
-        renderer = widget.get_cell_renderers()[0]
+        renderer = widget.get_cells()[0]
     if not property:
         for cls, name in [
             (Gtk.CellRendererText, 'text'),
@@ -68,7 +68,7 @@ def setup_column(widget, column=0, attribute=None, renderer=None,
             'value': int,
             'active': bool,
             }.get(property)
-    data_func = lambda widget, renderer, model, iter: renderer.set_property(
+    data_func = lambda widget, renderer, model, iter, none: renderer.set_property(
             property,
             from_python(
                 getattr(
