@@ -14,12 +14,14 @@ class Model(gtkmvc3.Model):
         self.box = [0, 1, 2]
 
 class Controller(gtkmvc3.Controller):
+    handlers = "class"
+
     index = 0
 
-    def on_button3_clicked(self, button):
+    def on_button3__clicked(self, button):
         self.model.box[self.index] += 1
 
-    on_button4_clicked = on_button3_clicked
+    on_button4__clicked = on_button3__clicked
 
 class ConnectTest(unittest.TestCase):
     def setUp(self):

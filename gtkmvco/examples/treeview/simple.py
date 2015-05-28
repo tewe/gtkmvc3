@@ -28,6 +28,8 @@ class Person(gtkmvc3.Model):
     __observables__ = ('name', 'age')
 
 class Controller(gtkmvc3.Controller):
+    handlers='class'
+
     def register_view(self, view):
         m = view['liststore1']
 
@@ -44,6 +46,9 @@ class Controller(gtkmvc3.Controller):
 
     def register_adapters(self):
         self.setup_columns()
+
+    def on_window1__delete_event(self, widget, event):
+        gtk.main_quit()
 
 m = gtkmvc3.Model()
 v = gtkmvc3.View(builder='simple.ui')

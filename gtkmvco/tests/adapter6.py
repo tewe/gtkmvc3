@@ -13,7 +13,9 @@ class Model(gtkmvc3.Model):
     __observables__ = ["en1"]
 
 class Controller(gtkmvc3.Controller):
-    def on_button1_clicked(self, button):
+    handlers = "class"
+
+    def on_button1__clicked(self, button):
         self.model.en1 += 1
 
     def handle(self, adapter, name, value):

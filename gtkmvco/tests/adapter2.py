@@ -28,9 +28,11 @@ class Model(gtkmvc3.Model):
     __observables__ = ["x"]
 
 class Controller(gtkmvc3.Controller):
+    handlers = "class"
+
     caught = False
 
-    def on_button2_clicked(self, button):
+    def on_button2__clicked(self, button):
         try:
             self.model.x.set_x(self.model.x.get_x() + 1)
         except ValueError:

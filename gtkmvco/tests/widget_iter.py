@@ -12,6 +12,7 @@ class View(gtkmvc3.View):
     top = "window6"
 
 class Ctrl(gtkmvc3.Controller):
+    handlers = "class"
 
     def register_view(self, view):
         iter1 = iter(view)
