@@ -824,7 +824,6 @@ except:
     pass  # sqlobject not available
 
 else:
-    @with_metaclass(metaclasses.ObservablePropertyMetaSQL)
     class SQLObjectModel(InheritableSQLObject, Model):
         """
         SQLObject uses a class's name for the corresponding table, so
@@ -834,6 +833,8 @@ else:
         After defining subclasses (not before!) you have to call
         ``.createTable`` on each, including SQLObjectModel itself.
         """
+
+        __metaclass__ = metaclasses.ObservablePropertyMetaSQL
 
         def _init(self, *args, **kargs):
             # Using __init__ or not calling super _init results in incomplete
