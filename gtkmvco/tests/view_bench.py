@@ -1,5 +1,5 @@
 """
-Shows that memoization makes sense.
+Shows that memoization (no longer) makes sense.
 """
 
 import timeit
@@ -7,29 +7,25 @@ import timeit
 import _importer
 import gtkmvc3
 
-glade = gtkmvc3.View(glade='adapter7.glade')
+N = 1000
+
 build = gtkmvc3.View(builder='adapter19.ui')
 
+names = []
 # Cause auto widget extraction.
-names = tuple(glade)
+for name in build:
+    names.append(name)
 
-# Dictionary.
+# Dictionary
 t = timeit.Timer("""
-    for name in names:
-        glade.autoWidgets[name]
-    """, "from __main__ import glade, names")
-print t.timeit() #1.6
-
-# Doesn't save much.
-xml = glade.glade_xmlWidgets[0]
-t = timeit.Timer("""
-    for name in names:
-        xml.get_widget(name)
-    """, "from __main__ import xml, names")
-print t.timeit() #5.8
-
-t = timeit.Timer("""
-    for name in names:
-        build._builder.get_object(name)
+for name in names:
+    build[name]
     """, "from __main__ import build, names")
-print t.timeit() #19
+print(t.timeit(N)) # 0.004
+
+# No caching
+t = timeit.Timer("""
+for name in names:
+    build._builder.get_object(name)
+    """, "from __main__ import build, names")
+print(t.timeit(N))  # 0.012
